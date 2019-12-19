@@ -1,3 +1,16 @@
 body {
-    background-color: green;
+    background-color: rgb(212, 206, 206);
+    
+
 }
+
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+ h1 {
+     color:black;
+     
+     
+ }
