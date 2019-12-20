@@ -7,32 +7,62 @@
     h1 {
         color:black;
         font-family: "Times New Roman", Times, serif;
+        text-align: center;
+        margin-top: 50px;
     }
     h3 {
         color:black;
         font-family: "Times New Roman", Times, serif;
+        margin-top: 100px;
     }
+    
+
+   
+
+    .row {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        margin-top: 70px;
     }
 
     img {
-        margin-right: 100px;
-        
+        margin-top: 50px;
+        width:100%;
     }
+ 
 </style>
-            {% endblock %}
+{% endblock %}
 
 {% block body %}
-<div><h1>Mon Blog Symfony </h1> </div>
 
-
-{% for article in articles %}
-    <h3>{{ article.title}}</h3>
-    <span>{{ article.date.format('d/m/Y')}}</span>
-    {% if article.image %}
-    <img src="{{article.image}}">
-    {% endif %}
-    <p>{{article.content}}</p>
-{% endfor %}
+    <div class="container">
+        <h1>Symfony: les Bases...</h1>
+            
+            {% for article in articles %}
+                <div class="row">
+                    <h3>{{ article.title}}</h3>
+                    <div class="col-md-6">
+                        
+                        <span>{{ article.date.format('d/m/Y')}}</span>
+                        {% if article.image %}
+                            <img src="{{article.image}}">
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6">
+                        <p>{{article.content}}</p>
+                    
+                    </div>
+                </div> 
+            {% endfor %}       
+            
+          
+    </div>
 {% endblock %}
+
+
 
 
